@@ -1,0 +1,40 @@
+# Delete .example from the file name to make these variables be automatically hooked
+master_name                   = ""
+master_account_id             = ""
+master_account_alias          = ""
+master_iam_admin_alias        = ""
+master_aws_profile            = ""
+master_account_default_region = ""
+base_email                    = ""
+organization_name             = ""
+level_1_ous                   = { "f" = "foundational", "a" = "additional" }
+level_2_ous                   = { "s" = "security", "i" = "infrastructure", "sb" = "sandboxes" }
+sso_portal                    = "https://your-portal-name.awsapps.com/start"
+junior_team_members = {
+  MEMBER1 = {
+    display_name = ""
+    user_name    = ""
+    emails       = [""]
+    position     = [""]
+    expertise    = "JUNIOR"
+  },
+}
+full_admin_team_members = {
+  MEMBER2 = {
+    display_name = ""
+    user_name    = ""
+    emails       = [""]
+    position     = ["Business Owner", "DevOps", "Admin", "Cloud Engineer", "Java Developer"]
+    expertise    = "SENIOR"
+  },
+}
+
+budget_notification_settings = {
+  TOTAL_NOTIFICATION_SETTINGS = {
+    comparison_operator        = "GREATER_THAN"
+    threshold                  = 60
+    threshold_type             = "PERCENTAGE"
+    notification_type          = "FORECASTED"
+    subscriber_email_addresses = [""]
+  }
+}
