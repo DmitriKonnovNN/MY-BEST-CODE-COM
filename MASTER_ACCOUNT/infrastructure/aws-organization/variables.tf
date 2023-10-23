@@ -2,7 +2,7 @@ variable "master_name" {
   type = string
 }
 variable "master_account_id" {
-  type = number
+  type = string
 }
 variable "master_account_alias" {
   type = string
