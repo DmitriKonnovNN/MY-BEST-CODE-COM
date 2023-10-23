@@ -204,7 +204,7 @@ variable "accounts" {
   description = "aws accounts deployed from master account"
 }
 
-variable "admin_sso_permissions" {
+variable "full_admin_sso_permissions" {
   type = list(object({
     name             = string
     description      = string
@@ -264,7 +264,68 @@ variable "admin_sso_permissions" {
 
 }
 
-variable "team_members" {
+
+variable "junior_front_end_sso_permissions" {
+  type = list(object({
+    name             = string
+    description      = string
+    session_duration = string
+    managed_policies = list(string)
+    aws_accounts     = list(string)
+    sso_groups       = list(string)
+  }))
+
+  default = [
+    {
+      name             = "AdministratorAccessJFE"
+      description      = "Provides full access to AWS services and resources."
+      session_duration = "PT4H"
+      managed_policies = ["arn:aws:iam::aws:policy/AdministratorAccess"]
+      aws_accounts     = []
+      sso_groups       = ["AdministratorGroupJuniorFrontEnd"]
+
+    },
+    {
+      name             = "DatabaseAdministratorAccessJFE"
+      description      = "Grants full access permissions to AWS services and actions required to set up and configure AWS database services."
+      session_duration = "PT4H"
+      managed_policies = ["arn:aws:iam::aws:policy/job-function/DatabaseAdministrator"]
+      aws_accounts     = ["SANDBOX-METAX7", "DEV-METAX7", "STAGING-METAX7"]
+      sso_groups       = ["DatabaseAdministratorGroupJuniorFrontEnd"]
+    },
+    {
+      name             = "PowerUserAccessJFE"
+      description      = "Provides full access to AWS services and resources, but does not allow management of Users and groups."
+      session_duration = "PT4H"
+      managed_policies = ["arn:aws:iam::aws:policy/PowerUserAccess"]
+      aws_accounts     = ["SANDBOX-METAX7", "DEV-METAX7", "STAGING-METAX7", "SANDBOX-MY-BEST-CODE"]
+      sso_groups       = ["PowerUserGroupJuniorFrontEnd"]
+    },
+    {
+      name             = "BillingJFE"
+      description      = "Grants permissions for billing and cost management. This includes viewing account usage and viewing and modifying budgets and payment methods."
+      session_duration = "PT4H"
+      managed_policies = ["arn:aws:iam::aws:policy/job-function/Billing"]
+      aws_accounts     = ["SANDBOX-METAX7", "DEV-METAX7", "STAGING-METAX7", "SANDBOX-MY-BEST-CODE"]
+      sso_groups       = ["BillingGroupJuniorFrontEnd"]
+    },
+    {
+      name             = "ViewOnlyAccessJFE"
+      description      = "This policy grants permissions to view resources and basic metadata across all AWS services."
+      session_duration = "PT4H"
+      managed_policies = ["arn:aws:iam::aws:policy/job-function/ViewOnlyAccess"]
+      aws_accounts     = ["SANDBOX-METAX7", "DEV-METAX7", "STAGING-METAX7", "PROD-METAX7", "SANDBOX-DMITRIKNN", "SANDBOX-MY-BEST-CODE"]
+      sso_groups       = ["ViewOnlyGroupJuniorFrontEnd"]
+
+    }
+
+  ]
+  description = "list of permission set properties for Identity Center (successor to SSO)"
+  nullable    = false
+
+}
+
+variable "junior_team_members" {
   type = map(object({
     display_name = string
     user_name    = string
@@ -272,7 +333,16 @@ variable "team_members" {
     position     = list(string)
     expertise    = string
   }))
+}
 
+variable "full_admin_team_members" {
+  type = map(object({
+    display_name = string
+    user_name    = string
+    emails       = list(string)
+    position     = list(string)
+    expertise    = string
+  }))
 }
 
 variable "budget_settings" {

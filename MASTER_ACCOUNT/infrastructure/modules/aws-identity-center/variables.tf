@@ -60,7 +60,7 @@ variable "sso_permissions" {
 
 variable "accounts" {
   type = map(object({
-    id        = number
+    id        = string
     arn       = string
     name      = string
     email     = string

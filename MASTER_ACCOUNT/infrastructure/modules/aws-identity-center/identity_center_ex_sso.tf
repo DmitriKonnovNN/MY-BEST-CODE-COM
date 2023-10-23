@@ -59,17 +59,6 @@ resource "aws_identitystore_user" "users" {
     primary = true
   }
 }
-
-resource "aws_identitystore_group_membership" "group_memberships" {
-  identity_store_id = local.identity_store_id
-  for_each = {
-    for record in local.memberships :
-    "${record.group_id}.${record.user_name}" => record
-  }
-  group_id  = each.value.group_id
-  member_id = each.value.user_id
-}
-
 locals {
   managed_policies = flatten([
     for permission in var.sso_permissions : [
@@ -92,13 +81,14 @@ locals {
   #####################################################################################################################
   account_groups = flatten([
     for permission in var.sso_permissions : [
-      for account_group in setproduct(permission.aws_accounts == ["ALL"] ? local.all_accounts : permission.aws_accounts, permission.sso_groups) : {
+      for account_group in setproduct(permission.aws_accounts == tolist(["ALL"]) ? local.all_accounts : permission.aws_accounts, permission.sso_groups) : {
         permission_set_name = permission.name
         account             = local.account_ids[account_group[0]].id
         group               = account_group[1]
       }
     ]
   ])
+
 
   account_group_assignments = {
     for account_group in local.account_groups :
@@ -118,26 +108,24 @@ locals {
   all_accounts = [
     for a in local.account_ids : a.name
   ]
-
-
-
-
-  memberships = flatten([
-    for group in aws_identitystore_group.id_groups : [
-      for user in aws_identitystore_user.users : {
-        group_id   = group.group_id
-        group_name = group.display_name
-        user_id    = user.user_id
-        user_name  = user.display_name
-      }
-    ]
-  ])
 }
 
-output "memberships" {
-  value = {
-    for_each = {
-      for record in local.memberships :
-      "${record.group_id}.${record.user_name}" => record
-  } }
+output "allacounts" {
+
+  value = local.all_accounts
+}
+output "identity_store_users" {
+  value = aws_identitystore_user.users
+}
+
+output "identity_store_groups" {
+  value = aws_identitystore_group.id_groups
+}
+
+output "sso_instance_arn" {
+  value = local.sso_instance_arn
+}
+
+output "identity_store_id" {
+  value = local.identity_store_id
 }

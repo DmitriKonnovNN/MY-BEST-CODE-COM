@@ -161,7 +161,3 @@ module "aws_org_units" {
     ]
   }
 }
-output "all_accounts_details" {
-  value = module.aws_org_units.accounts
-}
-
