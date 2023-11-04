@@ -36,6 +36,7 @@ variable "iam_role" {}
 variable "master_aws_profile" {}
 variable "f_cloud_workspace" {}
 
+
 EOF
 }
 
