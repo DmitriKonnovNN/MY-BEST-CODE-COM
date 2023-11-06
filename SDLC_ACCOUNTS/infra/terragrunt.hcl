@@ -1,4 +1,21 @@
-# Generate config.tf file with provider configuration
+remote_state {
+  backend = "s3"
+  generate = {
+    path      = "_backend.tf"
+    if_exists = "overwrite"
+  }
+
+  config = {
+    bucket  = "my-best-code-master-backend-state"
+    region  = "us-west-1"
+    key     = "${path_relative_to_include()}/terraform.tfstate"
+    encrypt = true
+    dynamodb_table = "my_best_code_master_backend_state_locking"
+    session_name = "terraform"
+    profile = "MY_BEST_CODE_MASTER_ADMIN"
+  }
+
+}
 generate "my_config" {
   path      = "_config.tf"
   if_exists = "overwrite"
@@ -6,24 +23,17 @@ generate "my_config" {
 
 
   contents = <<EOF
-  terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "5.5.0"
-    }
-  }
-  cloud {
-    organization = "my-best-code"
-
-    workspaces {
-      name = "var.tf_cloud_workspace"
-    }
-  }
-  required_version = ">= 0.13.1"
-}
+#  terraform {
+#  required_providers {
+#    aws = {
+#      source  = "hashicorp/aws"
+#      version = "5.5.0"
+#    }
+#  }
+#  required_version = ">= 0.13.1"
+#}
 provider "aws" {
-  region  = var.master_account_default_region
+  region  = var.target_region
   profile = var.master_aws_profile
   assume_role {
     role_arn = var.iam_role
@@ -31,17 +41,12 @@ provider "aws" {
   }
 }
 
-variable "master_account_default_region" {}
+variable "target_region" {}
 variable "iam_role" {}
 variable "master_aws_profile" {}
-variable "f_cloud_workspace" {}
-
 
 EOF
 }
-
-
-
 
 # Load Variables
 terraform {
