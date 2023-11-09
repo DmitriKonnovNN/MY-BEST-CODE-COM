@@ -18,28 +18,60 @@ dependency "s3-bucket" {
 }
 #
 inputs = {
-#  defaults = { # Default values
-#    create = false
-#    tags = {
-#      Environment = "sandbox"
-#    }
-#  }
+  #  defaults = { # Default values
+  #    create = false
+  #    tags = {
+  #      Environment = "sandbox"
+  #    }
+  #  }
   items = {
     js30devpipeline = {
-      bucket  = dependency.s3-bucket.outputs.s3_bucket_id
-      key     = "js30/dev/pipeline/"
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/dev/pipeline/"
     },
     js30prodpipeline = {
-      bucket  = dependency.s3-bucket.outputs.s3_bucket_id
-      key     = "js30/prod/pipeline/"
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/prod/pipeline/"
     },
     js30devcdn = {
-      bucket  = dependency.s3-bucket.outputs.s3_bucket_id
-      key     = "js30/dev/cloudfront/"
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/dev/cloudfront/"
     },
     js30prodcdn = {
-      bucket  = dependency.s3-bucket.outputs.s3_bucket_id
-      key     = "js30/prod/cloudfront/"
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/prod/cloudfront/"
+    },
+    js30prodapigw = {
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/prod/apigateway/"
+    },
+    js30devapigw = {
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/dev/apigateway/"
+    },
+    js30devlambda = {
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/dev/lambda/"
+    },
+    js30prodlambda = {
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/prod/lambda/"
+    },
+    js30devsqs = {
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/dev/sqs/"
+    },
+    js30prodsqs = {
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/prod/sqs/"
+    },
+    js30devcognito = {
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/dev/cognito/"
+    },
+    js30prodcognito = {
+      bucket = dependency.s3-bucket.outputs.s3_bucket_id
+      key    = "js30/prod/cognito/"
     }
   }
 
