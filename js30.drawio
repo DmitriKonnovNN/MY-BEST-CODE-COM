@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-11-15T15:16:01.382Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.69" etag="aM5VBwQZAR731M3PSwqs" version="22.1.0" type="github">
+<mxfile host="app.diagrams.net" modified="2023-11-15T17:06:14.726Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36 Edg/118.0.2088.69" etag="Jmw80lPv9NPYu11M70qL" version="22.1.0" type="github">
   <diagram name="Page-1" id="CoyWu5UEtDaa22KxvL--">
     <mxGraphModel dx="1434" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -99,7 +99,7 @@
             <mxPoint x="478.8880794701987" y="260.0000000000001" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="ZVegbPVVz9K0_TstjSi1-41" value="SPA&lt;br&gt;JS30 dev" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" vertex="1" parent="1">
+        <mxCell id="ZVegbPVVz9K0_TstjSi1-41" value="SPA&lt;br&gt;JS30 staging" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" vertex="1" parent="1">
           <mxGeometry x="359" y="420" width="50" height="54" as="geometry" />
         </mxCell>
         <mxCell id="ZVegbPVVz9K0_TstjSi1-49" value="API Gateway DEV&lt;br&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;" vertex="1" parent="1">
@@ -119,6 +119,9 @@
         </mxCell>
         <mxCell id="ZVegbPVVz9K0_TstjSi1-59" value="API-Key" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.key" vertex="1" parent="1">
           <mxGeometry x="570" y="720" width="80.85" height="38" as="geometry" />
+        </mxCell>
+        <mxCell id="ZVegbPVVz9K0_TstjSi1-63" value="SPA&lt;br&gt;JS30 &lt;br&gt;dev" style="sketch=0;pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#505050;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;outlineConnect=0;align=center;shape=mxgraph.office.concepts.web_page;" vertex="1" parent="1">
+          <mxGeometry x="450.89" y="571.5" width="50" height="54" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
