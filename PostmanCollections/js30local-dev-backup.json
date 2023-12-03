@@ -1,0 +1,412 @@
+{
+	"info": {
+		"_postman_id": "016736c7-e52c-41d2-9f16-f790109b2ec6",
+		"name": "JS30manual_v0.0.7",
+		"description": "Test set for _Local_ and _Dev_ environments.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cors_items",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "88263c9b-88dd-4353-b73e-a32b77959342",
+						"exec": [
+							"//Consider the API endpoint not available if the response time is equal to or longer than 1200 milisecond\r",
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "3da8c02b-71e5-4579-8031-5266d46f5f61",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{BASE_URL_REGIONAL}}/{{ENV}}/items"
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_items_and_likes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "e41110c2-f611-4627-bc1e-ad3215315dfe",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "006055ed-b722-4c10-939a-8bb6b3081c8a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": "{{BASE_URL_REGIONAL}}/{{ENV}}/items"
+			},
+			"response": []
+		},
+		{
+			"name": "update_users_like_set",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fef27692-4025-4817-960d-2671b041b47a",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e1b56c4f-1bf9-4a31-a67e-8fcf53160367",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{API_KEY_HEADER}}",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": {{USER_ID}},\r\n        \"likedItems\": [\"0\",\"1\",\"2\",\"3\",\"4\"]\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL_REGIONAL}}/{{ENV}}/userlikes"
+			},
+			"response": []
+		},
+		{
+			"name": "like_items_cors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "05cfa112-0537-416d-b304-4d3d30983c69",
+						"exec": [
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "fd98adde-b69f-474e-96b3-d563859e3865",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{BASE_URL_REGIONAL}}/{{ENV}}/items/dislike"
+			},
+			"response": []
+		},
+		{
+			"name": "like_an_item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f19bbf54-1e54-4518-83cf-563f4aaeb166",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "fa895059-6606-40e5-a593-98756eaa7204",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{API_KEY_HEADER}}",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL_REGIONAL}}/{{ENV}}/items/like?itemId=5",
+					"host": [
+						"{{BASE_URL_REGIONAL}}"
+					],
+					"path": [
+						"{{ENV}}",
+						"items",
+						"like"
+					],
+					"query": [
+						{
+							"key": "itemId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "dislike_items_cors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a409e8f6-c30c-46bc-ba69-999a4ee26d71",
+						"exec": [
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "e0df8c97-f342-4abb-b38a-514d38965b4b",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": "{{BASE_URL_REGIONAL}}/{{ENV}}/items/like"
+			},
+			"response": []
+		},
+		{
+			"name": "dislike_an_item",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7c7c214a-0c78-4820-b6b6-326bcd277da2",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "10ef93ce-ccbc-4e50-86bd-1553a2db513d",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{API_KEY_HEADER}}",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL_REGIONAL}}/{{ENV}}/items/dislike?ItemId=5",
+					"host": [
+						"{{BASE_URL_REGIONAL}}"
+					],
+					"path": [
+						"{{ENV}}",
+						"items",
+						"dislike"
+					],
+					"query": [
+						{
+							"key": "ItemId",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch_likes_cors",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "f96cabbf-c293-4b12-82da-4de6ef803dab",
+						"exec": [
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "6a0670d4-4b29-4dc5-bb60-399d7f8bf76a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{BASE_URL_REGIONAL}}/{{ENV}}/userlikes/:userId",
+					"host": [
+						"{{BASE_URL_REGIONAL}}"
+					],
+					"path": [
+						"{{ENV}}",
+						"userlikes",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "{{USER_ID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_users_likes",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "352a6fa4-b606-4d53-8e13-dd9c5fe968ac",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "56020337-6650-464c-9f52-b19bd88a3f90",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{API_KEY_HEADER}}",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{BASE_URL_REGIONAL}}/{{ENV}}/userlikes/:userId",
+					"host": [
+						"{{BASE_URL_REGIONAL}}"
+					],
+					"path": [
+						"{{ENV}}",
+						"userlikes",
+						":userId"
+					],
+					"variable": [
+						{
+							"key": "userId",
+							"value": "{{USER_ID}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
