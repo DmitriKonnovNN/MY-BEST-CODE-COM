@@ -1,15 +1,9 @@
-<mxfile host="app.diagrams.net" modified="2024-01-14T11:45:36.758Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="cHxucOP-hryQMllVUryX" version="22.1.18" type="github">
+<mxfile host="app.diagrams.net" modified="2024-01-14T11:49:10.410Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" etag="g3jcNb6-bOdxIjyXZsLL" version="22.1.18" type="github">
   <diagram name="Page-1" id="ysCLU3ksJZCOYAObZHHV">
     <mxGraphModel dx="1434" dy="804" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#ffffff" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="aeeoV6J_DZQmUdVFHj4A-3" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google" parent="1" vertex="1">
-          <mxGeometry x="210" y="90" width="65.2" height="69.4" as="geometry" />
-        </mxCell>
-        <mxCell id="aeeoV6J_DZQmUdVFHj4A-4" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-128.png" parent="1" vertex="1">
-          <mxGeometry x="205.2" y="20" width="70" height="70" as="geometry" />
-        </mxCell>
         <mxCell id="aeeoV6J_DZQmUdVFHj4A-5" value="Cognito User Pool" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#DD344C;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cognito;" parent="1" vertex="1">
           <mxGeometry x="480" y="40" width="70" height="70" as="geometry" />
         </mxCell>
@@ -94,7 +88,7 @@
             <mxPoint x="17" y="3" as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="aeeoV6J_DZQmUdVFHj4A-38" value="call endpoints beyond&lt;br&gt;oidc scope&amp;nbsp;" style="endArrow=classic;html=1;rounded=0;startArrow=classic;startFill=1;" parent="1" edge="1">
+        <mxCell id="aeeoV6J_DZQmUdVFHj4A-38" value="14) call endpoints beyond&lt;br&gt;oidc scope&amp;nbsp;" style="endArrow=classic;html=1;rounded=0;startArrow=classic;startFill=1;" parent="1" edge="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="190" y="200" as="sourcePoint" />
             <mxPoint x="197" y="130" as="targetPoint" />
@@ -142,6 +136,18 @@
             <mxPoint x="780" y="310" as="sourcePoint" />
             <mxPoint x="690" y="300" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="R3q0i-fjFb3VYWXX_q2q-19" value="" style="swimlane;startSize=0;" vertex="1" parent="1">
+          <mxGeometry x="140" y="30" width="150" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="aeeoV6J_DZQmUdVFHj4A-3" value="" style="dashed=0;outlineConnect=0;html=1;align=center;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;shape=mxgraph.weblogos.google" parent="R3q0i-fjFb3VYWXX_q2q-19" vertex="1">
+          <mxGeometry x="30" y="31.4" width="44.8" height="44.7" as="geometry" />
+        </mxCell>
+        <mxCell id="aeeoV6J_DZQmUdVFHj4A-4" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/2018-social-media-logotypes/1000/2018_social_media_popular_app_logo_facebook-128.png" parent="R3q0i-fjFb3VYWXX_q2q-19" vertex="1">
+          <mxGeometry x="80" y="28.75" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="R3q0i-fjFb3VYWXX_q2q-21" value="3rd party &lt;br&gt;Identity Providers&lt;br&gt;(IdP)" style="text;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;labelPosition=left;verticalLabelPosition=top;" vertex="1" parent="1">
+          <mxGeometry x="240" y="80" width="120" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
