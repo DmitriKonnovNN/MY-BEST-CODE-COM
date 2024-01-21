@@ -129,6 +129,54 @@
 			"response": []
 		},
 		{
+			"name": "get_idp_access_token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "fef27692-4025-4817-960d-2671b041b47a",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {\r",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\r",
+							"});\r",
+							"pm.test(\"Response time is less than 1 second.\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"id": "68c4e4ee-9f29-457a-8760-5d031100271c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{API_KEY_HEADER}}",
+						"value": "{{API_KEY}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"userId\": {{USER_ID}},\r\n        \"likedItems\": [\"0\",\"1\",\"2\",\"3\",\"4\"]\r\n        \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{BASE_URL_REGIONAL}}/{{ENV}}/tokens"
+			},
+			"response": []
+		},
+		{
 			"name": "like_items_cors",
 			"event": [
 				{
