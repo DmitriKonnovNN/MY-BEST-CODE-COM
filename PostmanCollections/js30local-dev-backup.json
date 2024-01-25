@@ -223,7 +223,7 @@
 					"query": [
 						{
 							"key": "scope",
-							"value": "test",
+							"value": "aws.cognito.signin.user.admin openid profile email",
 							"disabled": true
 						}
 					]
