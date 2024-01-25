@@ -212,7 +212,7 @@
 					}
 				},
 				"url": {
-					"raw": "{{BASE_URL_REGIONAL}}/{{ENV}}/tokens?scope=test",
+					"raw": "{{BASE_URL_REGIONAL}}/{{ENV}}/tokens",
 					"host": [
 						"{{BASE_URL_REGIONAL}}"
 					],
@@ -223,7 +223,8 @@
 					"query": [
 						{
 							"key": "scope",
-							"value": "test"
+							"value": "test",
+							"disabled": true
 						}
 					]
 				}
