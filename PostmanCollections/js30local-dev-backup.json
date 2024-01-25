@@ -184,7 +184,23 @@
 						}
 					}
 				},
-				"url": "{{BASE_URL_REGIONAL}}/{{ENV}}/tokens"
+				"url": {
+					"raw": "{{BASE_URL_REGIONAL}}/{{ENV}}/tokens?scope=test",
+					"host": [
+						"{{BASE_URL_REGIONAL}}"
+					],
+					"path": [
+						"{{ENV}}",
+						"tokens"
+					],
+					"query": [
+						{
+							"key": "scope",
+							"value": "test",
+							"type": "text"
+						}
+					]
+				}
 			},
 			"response": []
 		},
