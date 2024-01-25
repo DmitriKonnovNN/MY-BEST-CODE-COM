@@ -141,7 +141,10 @@
 							"});\r",
 							"pm.test(\"Response time is less than 1 second.\", function () {\r",
 							"    pm.expect(pm.response.responseTime).to.be.below(3500);\r",
-							"});"
+							"});\r",
+							"\r",
+							"let responseData = pm.response.json();\r",
+							"pm.globals.set(\"G_AT_PT\", responseData[\"access_token\"]);"
 						],
 						"type": "text/javascript"
 					}
@@ -205,7 +208,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"idpRefreshToken\": {{GOOGLE_RT_CK}},\r\n        \"thirdPartyIdp\" : \"Google\"\r\n}",
+					"raw": "{\r\n        \"idpRefreshToken\": \"{{GOOGLE_RT_CK}}\",\r\n        \"thirdPartyIdp\" : \"Google\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
