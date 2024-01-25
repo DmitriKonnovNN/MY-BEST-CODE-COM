@@ -165,8 +165,9 @@
 				"auth": {
 					"type": "oauth2",
 					"oauth2": {
-						"headerPrefix": "",
 						"tokenType": "Bearer",
+						"accessToken": "eyJraWQiOiJQcWtwMERNQ2RXUU14TktPd2JHYXB0NkZlYllUTGxlZzRDMkFGNTdjQWJzPSIsImFsZyI6IlJTMjU2In0.eyJhdF9oYXNoIjoiZWZ6Y2RkOFFsdWdGaUhQRU5JTWhqQSIsInN1YiI6IjExMzdhNDNiLWUwNjUtNDllNi05OGZkLTQ4ZGY1MTJlMTdmNyIsImNvZ25pdG86Z3JvdXBzIjpbInVzLXdlc3QtMV9ETXFDY24zOHBfR29vZ2xlIl0sImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0xLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMV9ETXFDY24zOHAiLCJjdXN0b206Z29vZ2xlX3JlZnJlc2hfdG9rZW4iOiJNams9cTNRcStCcWVtOWtMbmJCdDVNOStiZz09NkZSeEtrUWhVS2JSZmJQcktFMVwvRWxyTFVHdWRiR21iRUlBMlhPWGZxYUhTY1c3ZW56WFZnRXNVZzZrd043YTNJZVRmeVVRNENMNmJMQ3kzc2s5Y0lDQWRnUHViZXFpVUFtUmNoV1ZIMlcxajVcLzBNWEtzMWp2Y3BsZFRRMzRjcWY1czQzVFpXTnZpWUx5K0JNU1hDNUE9PSIsImNvZ25pdG86dXNlcm5hbWUiOiJnb29nbGVfMTAyMzkzNTc2Njk4MzEyOTUzODMyIiwiZ2l2ZW5fbmFtZSI6IkRtaXRyaSIsInBpY3R1cmUiOiJodHRwczpcL1wvbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbVwvYVwvQUNnOG9jSjRyc3JBSFFqQ3JUb3RYUzhHMVNPamp3UlJpTDlRVkNmS0RYMHJWVzM3REE9czk2LWMiLCJvcmlnaW5fanRpIjoiOTg1ZDVjMmMtMTIwNC00NThmLWFhZGMtYWM2NGRlYmQyNDc1IiwiYXVkIjoiMXJxNjVhYTI2MnVrOGJtdmJ1bmI4ZnFnMzEiLCJpZGVudGl0aWVzIjpbeyJ1c2VySWQiOiIxMDIzOTM1NzY2OTgzMTI5NTM4MzIiLCJwcm92aWRlck5hbWUiOiJHb29nbGUiLCJwcm92aWRlclR5cGUiOiJHb29nbGUiLCJpc3N1ZXIiOm51bGwsInByaW1hcnkiOiJ0cnVlIiwiZGF0ZUNyZWF0ZWQiOiIxNzA2MTY5NzkwNzQwIn1dLCJ0b2tlbl91c2UiOiJpZCIsImF1dGhfdGltZSI6MTcwNjE3MDE4MiwiZXhwIjoxNzA2MTczNzgyLCJpYXQiOjE3MDYxNzAxODIsImZhbWlseV9uYW1lIjoiS29ubm92IiwianRpIjoiZTQxZGUxZjQtYjRlZC00N2VjLThjNjUtOTM5ZDhjOTY4NjhiIiwiZW1haWwiOiJkbWl0cmkudi5rb25ub3ZAZ21haWwuY29tIn0.a5ZOlJzqawwi8guXbU1mKIwwkHYpKEHp6Pck0P-0GzI2L9F2MMD9-DpQTziJbfcqivnwEy4GQsKRRaA6Q70ORqJyMYwlPRVXIf5_1Nff5593pdqVjEKAb5n8SbVdiN6gWJFE0dVKvS6FT1GLXAs_uQcAsecp4sCoINIBVKaMjMWkTZjlh0BQIzW2EuhUR8opgKce4mdInHT0XPC7pqQP3Au8W38esUUpiSZMr77ny-X5K_KqZm0rCittlQjmY2aYCrGY85Wx9IMgoxp_h7Nu7bKC7ATNd66ohRyc1KqhxuH9u1KMgZ3VlRu2a9hxKmzjCaCG8jjliZQAA75i4klJPg",
+						"headerPrefix": "",
 						"state": "{{STATE}}",
 						"challengeAlgorithm": "S256",
 						"grant_type": "authorization_code_with_pkce",
@@ -204,7 +205,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"idpRefreshToken\": \"MjE=IcKn9wamZ4WLFEQoKSk/pA==F6dyKGn24zVxGeKP5sLL2OGWMMLqdjVTkNhBYvAJ8i2B4bPpq2R3G/Kr+Tv4OteF3fYVjvidRPkFAbpGY3R7Tq1egBMQ15ajGxrA8i29PIJAKlB/GJtPXnC1edZrMhHuOb+1f6S313Pv6+wCJOmtlQ==\",\r\n        \"thirdPartyIdp\" : \"Google\"\r\n}",
+					"raw": "{\r\n        \"idpRefreshToken\": {{}},\r\n        \"thirdPartyIdp\" : \"Google\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
