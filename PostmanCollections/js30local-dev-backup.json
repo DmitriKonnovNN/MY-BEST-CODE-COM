@@ -175,7 +175,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"idpRefreshToken\": \"MjE=IcKn9wamZ4WLFEQoKSk/pA==F6dyKGn24zVxGeKP5sLL2OGWMMLqdjVTkNhBYvAJ8i2B4bPpq2R3G/Kr+Tv4OteF3fYVjvidRPkFAbpGY3R7Tq1egBMQ15ajGxrA8i29PIJAKlB/GJtPXnC1edZrMhHuOb+1f6S313Pv6+wCJOmtlQ==\"\r\n}",
+					"raw": "{\r\n        \"idpRefreshToken\": \"MjE=IcKn9wamZ4WLFEQoKSk/pA==F6dyKGn24zVxGeKP5sLL2OGWMMLqdjVTkNhBYvAJ8i2B4bPpq2R3G/Kr+Tv4OteF3fYVjvidRPkFAbpGY3R7Tq1egBMQ15ajGxrA8i29PIJAKlB/GJtPXnC1edZrMhHuOb+1f6S313Pv6+wCJOmtlQ==\",\r\n        \"thirdPartyIdp\" : \"Google\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
