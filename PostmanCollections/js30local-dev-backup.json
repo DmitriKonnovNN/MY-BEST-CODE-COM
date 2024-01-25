@@ -151,7 +151,7 @@
 					"script": {
 						"id": "ae634044-84e9-424c-86fd-6e783f86c21f",
 						"exec": [
-							""
+							"pm.environment.get(\"variable_key\");"
 						],
 						"type": "text/javascript"
 					}
@@ -205,7 +205,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n        \"idpRefreshToken\": {{}},\r\n        \"thirdPartyIdp\" : \"Google\"\r\n}",
+					"raw": "{\r\n        \"idpRefreshToken\": {{GOOGLE_RT_CK}},\r\n        \"thirdPartyIdp\" : \"Google\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
